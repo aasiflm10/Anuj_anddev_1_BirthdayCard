@@ -1,0 +1,23 @@
+package com.example.anuj_anddev_1
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_birthday_greeting.*
+
+class BirthdayGreetingActivity : AppCompatActivity() {
+
+    //companion object is like a static variable
+    companion object {
+        const val NAME_EXTRA = "name_extra"
+    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_birthday_greeting)
+
+        val name = intent.getStringExtra(BirthdayGreetingActivity.NAME_EXTRA)
+
+        birthdayGreeting.text = "Happy Birthday\n$name"
+
+
+    }
+}
